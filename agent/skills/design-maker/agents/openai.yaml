@@ -1,0 +1,6 @@
+interface:
+  display_name: "Design Maker"
+  short_description: "根据需求和设计规范生成视觉方案。"
+  default_prompt: "Use $design-maker to create artifacts/DESIGN.md from SPEC.md and BRIEF.md."
+policy:
+  allow_implicit_invocation: true

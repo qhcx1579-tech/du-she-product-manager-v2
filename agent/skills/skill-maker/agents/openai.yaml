@@ -1,0 +1,6 @@
+interface:
+  display_name: "Skill Maker"
+  short_description: "创建或更新可复用的专门 skill。"
+  default_prompt: "Use $skill-maker to create a new skill for this workflow."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Dev Planner"
+  short_description: "把需求拆成可运行、可验收的开发阶段。"
+  default_prompt: "Use $dev-planner to create artifacts/PLAN.md from the product documents."
+policy:
+  allow_implicit_invocation: true

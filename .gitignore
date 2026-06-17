@@ -1,0 +1,41 @@
+# Secrets and local environment
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local caches
+.cache/
+.tmp/
+tmp/
+temp/
+*.log
+
+# Dependencies and build outputs
+node_modules/
+dist/
+build/
+out/
+.next/
+.vite/
+coverage/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Internal/private artifacts
+artifacts/drafts/
+artifacts/*.local.md
+artifacts/PRIVATE_NOTES.md

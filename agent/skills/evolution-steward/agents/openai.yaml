@@ -1,0 +1,6 @@
+interface:
+  display_name: "Evolution Steward"
+  short_description: "把真实反馈沉淀成流程和 skill 的进化。"
+  default_prompt: "Use $evolution-steward to improve this workflow from recent feedback."
+policy:
+  allow_implicit_invocation: true

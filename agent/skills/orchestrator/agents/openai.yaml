@@ -1,0 +1,6 @@
+interface:
+  display_name: "Orchestrator"
+  short_description: "控制 agent 调度节奏，防止死循环和 429。"
+  default_prompt: "Use $orchestrator to choose the next safe agent and prevent runaway loops."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Goal Writer"
+  short_description: "把目标写成可执行、可验收的 GOAL.md。"
+  default_prompt: "Use $goal-writer to create artifacts/GOAL.md for this project."
+policy:
+  allow_implicit_invocation: true

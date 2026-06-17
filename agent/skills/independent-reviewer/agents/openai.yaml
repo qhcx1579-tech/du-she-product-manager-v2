@@ -1,0 +1,6 @@
+interface:
+  display_name: "Independent Reviewer"
+  short_description: "由未参与开发的审查员做独立验收。"
+  default_prompt: "Use $independent-reviewer to review the latest implementation."
+policy:
+  allow_implicit_invocation: true

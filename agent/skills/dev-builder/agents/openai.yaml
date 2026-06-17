@@ -1,0 +1,6 @@
+interface:
+  display_name: "Dev Builder"
+  short_description: "按计划写代码，并强制独立审核闭环。"
+  default_prompt: "Use $dev-builder to implement the next phase from artifacts/PLAN.md."
+policy:
+  allow_implicit_invocation: true
