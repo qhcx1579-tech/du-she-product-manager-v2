@@ -275,7 +275,9 @@ Before preparing a release, package, GitHub upload, installer, executable, deplo
 4. If the release includes `.exe`, `setup.exe`, `installer.exe`, Inno Setup `.iss`, or another Windows executable package, run the Windows installer checks in `hooks/RELEASE_GATE.md`.
 5. Output the required release summary before asking for any publishing confirmation.
 
-Unsigned Windows installers may be suitable for local testing, but do not call them production-ready or ready for public distribution without explaining SmartScreen, Unknown Publisher, and antivirus reputation risks.
+Unsigned Windows installers may be suitable for local testing, but do not call them production-ready or ready for public distribution without explaining SmartScreen, Smart App Control, Unknown Publisher, and antivirus reputation risks.
+
+If Windows blocks an installer, do not immediately classify it as an application code bug and do not default to telling the user to disable Windows security features. Use `docs/windows-install-troubleshooting.md` and `hooks/RELEASE_GATE.md` to separate packaging, signing, reputation, Mark-of-the-Web, Defender, and Smart App Control issues from real runtime defects.
 
 ## How to Choose a Skill
 

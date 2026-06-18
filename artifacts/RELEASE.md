@@ -45,3 +45,21 @@ For public repositories, prefer a privacy-protected Git author email such as a G
 5. Show the target repository URL to the user and ask for confirmation.
 6. If the URL is missing, unclear, or not the user-specified repository, ask the user for the exact repository name or URL.
 7. Push the local `main` branch to GitHub only after confirmation.
+
+## Windows Package Release Standard
+
+This repository does not currently include a Windows installer or Inno Setup `.iss` file.
+
+For projects built with this agent system, if a Windows `.exe`, `setup.exe`, `installer.exe`, Inno Setup package, or other executable package is produced, the release must include:
+
+- code-signing status
+- publisher and version information status
+- SmartScreen / Smart App Control risk assessment
+- Defender / antivirus risk assessment
+- SHA256 checksum
+- retained build log
+- distribution channel recommendation
+
+Unsigned installers may be used for local testing, but they must not be described as production-ready or suitable for public release without explaining possible Unknown Publisher, SmartScreen, Smart App Control, and antivirus reputation warnings.
+
+Do not ask public users to disable Windows security features as the release solution.

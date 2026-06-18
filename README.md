@@ -24,6 +24,7 @@ START_HERE_FOR_CODEX.md
 - `agent/`：12 个 agent/skill
 - `agent/workflow/COMMAND_POLICY.md`：命令、Git、依赖、发布操作的安全策略
 - `artifacts/`：阶段交接文档
+- `docs/`：面向具体场景的诊断和发布说明
 - `hooks/`：审核和发布门禁，包含 GitHub 发布和 Windows 安装包检查
 - `evolution/`：自进化规则和记录
 
@@ -63,7 +64,9 @@ agent/workflow/COMMAND_POLICY.md
 hooks/RELEASE_GATE.md
 ```
 
-如果发布对象包含 `.exe`、`setup.exe`、`installer.exe`、Inno Setup `.iss` 生成的安装包或其他 Windows 可执行发布包，Release Builder 必须检查数字签名、SmartScreen reputation、Defender / antivirus 风险、安装包内容和隐私泄露风险。未签名安装包可以用于本地测试，但不能直接声称适合正式公开分发。
+如果发布对象包含 `.exe`、`setup.exe`、`installer.exe`、Inno Setup `.iss` 生成的安装包或其他 Windows 可执行发布包，Release Builder 必须检查数字签名、SmartScreen reputation、Smart App Control、Defender / antivirus 风险、安装包内容和隐私泄露风险。未签名安装包可以用于本地测试，但不能直接声称适合正式公开分发。
+
+Windows 安装包被拦截时，不默认让用户关闭系统安全功能。应先按 `docs/windows-install-troubleshooting.md` 区分 Smart App Control、SmartScreen、Defender、Mark-of-the-Web、代码签名、版本信息、发布者信息和 `.iss` 配置问题。
 
 ## 用户模式
 
@@ -90,6 +93,7 @@ hooks/RELEASE_GATE.md
 - `agent/skills/`：12 个专门技能
 - `agent/workflow/`：工作流、文档契约、产物规则和命令安全策略
 - `artifacts/`：各环节交接文档
+- `docs/`：面向具体场景的诊断和发布说明
 - `evolution/`：自进化规则和日志
 - `hooks/`：审核门禁和发布门禁
 

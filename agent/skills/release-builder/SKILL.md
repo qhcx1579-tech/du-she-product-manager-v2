@@ -28,7 +28,7 @@ Write or update `artifacts/RELEASE.md`.
 2. Identify files that must not be uploaded.
 3. Check for secrets, tokens, private notes, local caches, logs, and internal prompts.
 4. Read `hooks/RELEASE_GATE.md` and apply every relevant release gate.
-5. If the release includes Windows `.exe`, `setup.exe`, `installer.exe`, Inno Setup `.iss`, or another Windows executable package, run the Windows installer checks from `hooks/RELEASE_GATE.md`.
+5. If the release includes Windows `.exe`, `setup.exe`, `installer.exe`, Inno Setup `.iss`, or another Windows executable package, run the Windows installer checks and diagnostics from `hooks/RELEASE_GATE.md`.
 6. Ensure `.gitignore` and release notes are adequate.
 7. Confirm the target GitHub repository with the user before any remote push.
 8. Package or prepare GitHub upload steps.
@@ -42,6 +42,7 @@ Write or update `artifacts/RELEASE.md`.
 - Build and package commands
 - GitHub setup steps
 - Windows installer check, if applicable
+- SHA256 checksum, if a binary package is produced
 - User authorship notes
 - Post-release checks
 
@@ -52,7 +53,9 @@ Write or update `artifacts/RELEASE.md`.
 - Do not write the user's personal email, account handle, repository URL, token, or private identity details into public release documents.
 - If authorship needs to be documented, use generic wording such as "Use the user's own Git identity locally" and recommend a privacy-protected no-reply email.
 - Do not upload system prompts, developer prompts, private configs, secrets, chat records, or internal core files.
-- Do not call an unsigned Windows executable or installer production-ready without explaining Unknown Publisher, SmartScreen, and antivirus reputation risks.
+- Do not call an unsigned Windows executable or installer production-ready without explaining Unknown Publisher, SmartScreen, Smart App Control, and antivirus reputation risks.
+- Do not treat disabling Smart App Control, SmartScreen, Defender, or firewall as a formal release fix. It may only be a temporary development-test diagnostic option when the source is trusted.
+- For public Windows releases, prefer code signing, complete publisher/version metadata, SHA256 checksums, retained build logs, and trusted distribution channels such as GitHub Releases or an official website.
 - Ask before network operations or remote pushes.
 - Before pushing, show the current remote repository URL and ask the user to confirm it is the intended repository.
 - If the repository is missing, unclear, or not the user-specified repository, ask the user for the exact repository name or URL before continuing.

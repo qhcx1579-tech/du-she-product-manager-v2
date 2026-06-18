@@ -69,3 +69,11 @@
 - 修改内容：移除公开 release 文档中的个人账号和邮箱，更新 Release Builder、Release Gate、入口文件和隐私排除清单，禁止公开文档写入用户邮箱、账号、具体仓库 URL 等身份信息。
 - 影响范围：后续发布文档只能使用通用表述，例如“使用用户自己的本地 Git 身份”，并建议使用 GitHub no-reply 隐私邮箱。
 - 回滚方式：不建议回滚；如必须回滚，需先确认不会重新暴露个人信息。
+
+## 2026-06-18
+
+- 触发原因：Windows 安装包在开发测试中被系统安全机制拦截，关闭 Smart App Control 后可以运行。
+- 观察到的问题：原 Windows 发布检查只覆盖 SmartScreen、Defender 和未签名安装包风险，没有明确 Smart App Control、Mark-of-the-Web、发布者信息、版本信息和 `.iss` 元数据诊断顺序；Bug Fixer 也可能把安全信誉拦截误判为应用代码错误。
+- 修改内容：更新 Release Gate、Release Builder、Bug Fixer、入口文件、README、RELEASE 文档契约和 release artifact，新增 `docs/windows-install-troubleshooting.md`，要求先区分 Windows 安全信誉、签名、打包配置和真实运行时 bug。
+- 影响范围：目标项目发布 Windows `.exe`、installer 或 Inno Setup 安装包时，必须检查 Smart App Control / SmartScreen / Defender 风险、签名、发布者和版本信息、SHA256、可信分发渠道；不得把关闭 Windows 安全功能作为正式发布方案。
+- 回滚方式：移除上述文件中的 Windows 安装包安全诊断规则，并删除 `docs/windows-install-troubleshooting.md`；不建议回滚，除非后续有更完整的 Windows 发布策略替代。
